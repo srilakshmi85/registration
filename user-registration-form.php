@@ -1,13 +1,13 @@
 <?php
 echo "here:";
-exit;
 
-use Phppot\Member;
+
 if (! empty($_POST["signup-btn"])) {
     require_once './Member.php';
     $member = new Member();
     $registrationResponse = $member->registerMember();
 }
+exit;
 ?>
 <HTML>
 <HEAD>
