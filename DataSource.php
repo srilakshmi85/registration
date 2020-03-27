@@ -7,7 +7,7 @@
  * In essense, you can use it on commercial software, modify and distribute free.
  * Though not mandatory, you are requested to attribute this URL in your code or website.
  */
-namespace Phppot;
+
 
 /**
  * Generic datasource class for handling DB operations.
@@ -20,7 +20,7 @@ class DataSource
 
     // PHP 7.1.0 visibility modifiers are allowed for class constants.
     // when using above 7.1.0, declare the below constants as private
-    const HOST = 'http://ec2-34-207-138-118.compute-1.amazonaws.com/';
+    const HOST = 'ec2-34-207-138-118.compute-1.amazonaws.com';
 
     const USERNAME = 'root';
 
