@@ -7,7 +7,7 @@ if (! empty($_POST["signup-btn"])) {
     $member = new Member();
     $registrationResponse = $member->registerMember();
 }
-exit;
+
 ?>
 <HTML>
 <HEAD>
