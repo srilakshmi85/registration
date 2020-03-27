@@ -1,5 +1,5 @@
 <?php
-namespace Phppot;
+
 
 class Member
 {
