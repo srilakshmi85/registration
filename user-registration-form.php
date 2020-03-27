@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if (! empty($_POST["signup-btn"])) {
-    require_once './Member.php';
+    require_once '/Member.php';
     $member = new Member();
     $registrationResponse = $member->registerMember();
 }
