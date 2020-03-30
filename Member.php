@@ -40,8 +40,8 @@ class Member
             $paramType = 'sss';
             $paramValue = array(
                 $_POST["username"],
-                $_POST["signup-password"],
-                $_POST["email"]
+                $_POST["email"],
+                $_POST["signup-password"]
             );
 
           echo  $memberId = $this->ds->insert($query, $paramType, $paramValue);
