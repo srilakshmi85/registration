@@ -18,7 +18,7 @@ class Member
         $query = 'SELECT * FROM users where email = ?';
         $paramType = 's';
         $paramValue = array(
-            $email
+            'sri'
         );
         $insertRecord = $this->ds->select($query, $paramType, $paramValue);
         $count = 0;
@@ -42,7 +42,7 @@ class Member
             $paramValue = array(
                 $_POST["email"],
                 $hashedPassword,
-                $_POST["email"]
+                $_POST["confirm-password"]
             );
             echo $this->ds->insert($query, $paramType, $paramValue);
          echo   $memberId = $this->ds->insert($query, $paramType, $paramValue);
