@@ -20,7 +20,7 @@ class DataSource
 
     // PHP 7.1.0 visibility modifiers are allowed for class constants.
     // when using above 7.1.0, declare the below constants as private
-    const HOST = 'ec2-34-207-138-118.compute-1.amazonaws.com';
+    const HOST = 'ec2-3-92-235-106.compute-1.amazonaws.com';
 
     const USERNAME = 'root';
 
