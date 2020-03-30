@@ -36,7 +36,7 @@ class Member
             if (! empty($_POST["signup-password"])) {
                 $hashedPassword = password_hash($_POST["signup-password"], PASSWORD_DEFAULT);
             }
-           echo $query = 'INSERT INTO MyGuests1 (firstname, email_id, user_password) VALUES (?, ?, ?)';
+            $query = 'INSERT INTO MyGuests1 (firstname, email_id, user_password) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
                 $_POST["username"],
@@ -44,7 +44,7 @@ class Member
                 $_POST["signup-password"]
             );
 
-          echo  $memberId = $this->ds->insert($query, $paramType, $paramValue);
+            $memberId = $this->ds->insert($query, $paramType, $paramValue);
             if(!empty($memberId)) {
                 $response = array("status" => "success", "message" => "You have registered successfully.");
             }
