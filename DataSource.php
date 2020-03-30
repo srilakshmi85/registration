@@ -142,7 +142,7 @@ class DataSource
     {
         $paramValueReference[] = & $paramType;
         for ($i = 0; $i < count($paramArray); $i ++) {
-            $paramValueReference[] = & $paramArray[$i];
+          echo  $paramValueReference[] = & $paramArray[$i];
         }
         call_user_func_array(array(
             $stmt,

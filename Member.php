@@ -39,11 +39,12 @@ class Member
            echo $query = 'INSERT INTO MyGuests (firstname, email_id, user_password) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
-                $_POST["email"],
+                $_POST["username"],
                 $_POST["signup-password"],
                 $_POST["email"]
             );
-            $memberId = $this->ds->insert($query, $paramType, $paramValue);
+
+          echo  $memberId = $this->ds->insert($query, $paramType, $paramValue);
             if(!empty($memberId)) {
                 $response = array("status" => "success", "message" => "You have registered successfully.");
             }
