@@ -36,7 +36,7 @@ class Member
             if (! empty($_POST["signup-password"])) {
                 $hashedPassword = password_hash($_POST["signup-password"], PASSWORD_DEFAULT);
             }
-            $query = 'INSERT INTO users (email, password, confirm) VALUES (?, ?, ?)';
+           echo $query = 'INSERT INTO users (email, password, confirm) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
                 $_POST["email"],
