@@ -15,7 +15,7 @@ class Member
 
     public function isMemberExists($email)
     {
-        $query = 'SELECT * FROM MyGuests where email_id = ?';
+        $query = 'SELECT * FROM MyGuests1 where email_id = ?';
         $paramType = 's';
         $paramValue = array(
             $email
@@ -36,7 +36,7 @@ class Member
             if (! empty($_POST["signup-password"])) {
                 $hashedPassword = password_hash($_POST["signup-password"], PASSWORD_DEFAULT);
             }
-           echo $query = 'INSERT INTO MyGuests (firstname, email_id, user_password) VALUES (?, ?, ?)';
+           echo $query = 'INSERT INTO MyGuests1 (firstname, email_id, user_password) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
                 $_POST["username"],
@@ -56,7 +56,7 @@ class Member
 
     public function getMember($username)
     {
-        $query = 'SELECT * FROM MyGuests where email_id = ?';
+        $query = 'SELECT * FROM MyGuests1 where email_id = ?';
         $paramType = 's';
         $paramValue = array(
             $username
