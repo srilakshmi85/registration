@@ -6,8 +6,7 @@ error_reporting(E_ALL);
 if (! empty($_POST["signup-btn"])) {
     require_once './Member.php';
     $member = new Member();
-    $registrationResponse = $member->isMemberExists();
-    print_r($registrationResponse);
+    $registrationResponse = $member->registerMember();
 }
 
 ?>

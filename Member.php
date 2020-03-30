@@ -13,7 +13,7 @@ class Member
         $this->ds = new DataSource();
     }
 
-    public function isMemberExists()
+    public function isMemberExists($email)
     {
         $query = 'SELECT * FROM users where email = ?';
         $paramType = 's';
