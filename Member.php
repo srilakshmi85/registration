@@ -15,7 +15,7 @@ class Member
 
     public function isMemberExists($email)
     {
-        $query = 'SELECT * FROM users where email = ?';
+        $query = 'SELECT * FROM MyGuests where email_id = ?';
         $paramType = 's';
         $paramValue = array(
             $email
@@ -36,14 +36,14 @@ class Member
             if (! empty($_POST["signup-password"])) {
                 $hashedPassword = password_hash($_POST["signup-password"], PASSWORD_DEFAULT);
             }
-           echo $query = 'INSERT INTO users (email, password, confirm) VALUES (?, ?, ?)';
+           echo $query = 'INSERT INTO MyGuests (firstname, email_id, user_password) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
                 $_POST["email"],
-                $hashedPassword,
+                $_POST["signup-password"],
                 $_POST["email"]
             );
-          echo  $memberId = $this->ds->insert($query, $paramType, $paramValue);
+            $memberId = $this->ds->insert($query, $paramType, $paramValue);
             if(!empty($memberId)) {
                 $response = array("status" => "success", "message" => "You have registered successfully.");
             }
@@ -55,7 +55,7 @@ class Member
 
     public function getMember($username)
     {
-        $query = 'SELECT * FROM users where email = ?';
+        $query = 'SELECT * FROM MyGuests where email_id = ?';
         $paramType = 's';
         $paramValue = array(
             $username
@@ -70,13 +70,13 @@ class Member
         if (! empty($_POST["signup-password"])) {
             $password = $_POST["signup-password"];
         }
-        $hashedPassword = $loginUserResult[0]["password"];
+        $hashedPassword = $loginUserResult[0]["user_password"];
         $loginPassword = 0;
         if (password_verify($password, $hashedPassword)) {
             $loginPassword = 1;
         }
         if ($loginPassword == 1) {
-            $_SESSION["username"] = $loginUserResult[0]["email"];
+            $_SESSION["firstname"] = $loginUserResult[0]["email_id"];
             $url = "./home.php";
             header("Location: $url");
         } else if ($loginPassword == 0) {
