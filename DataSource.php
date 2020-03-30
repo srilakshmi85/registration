@@ -104,11 +104,11 @@ class DataSource
     public function insert($query, $paramType, $paramArray)
     {
         $stmt = $this->conn->prepare($query);
-        print_r($stmt);
+
        echo $this->bindQueryParams($stmt, $paramType, $paramArray);
 
-      echo  $stmt->execute();
-        $insertId = $stmt->insert_id;
+      echo "exeuite" . $stmt->execute();
+      echo "id".  $insertId = $stmt->insert_id;
         return $insertId;
     }
 
