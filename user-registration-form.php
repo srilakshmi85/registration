@@ -7,7 +7,7 @@ if (! empty($_POST["signup-btn"])) {
     require_once './Member.php';
     $member = new Member();
     $registrationResponse = $member->registerMember();
-    print($registrationResponse);
+    
 }
 
 ?>
