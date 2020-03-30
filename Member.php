@@ -30,12 +30,13 @@ class Member
 
     public function registerMember()
     {
+        $response='';
         $result = $this->isMemberExists($_POST["email"]);
         if ($result < 1) {
             if (! empty($_POST["signup-password"])) {
                 $hashedPassword = password_hash($_POST["signup-password"], PASSWORD_DEFAULT);
             }
-            $query = 'INSERT INTO users (email, password, confirm) VALUES (?, ?, ?)';
+          echo   $query = 'INSERT INTO users (email, password, confirm) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
                 $_POST["username"],
