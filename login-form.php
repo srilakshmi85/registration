@@ -1,6 +1,6 @@
 <?php
 if (! empty($_POST["login-btn"])) {
-    require_once './Model/Member.php';
+    require_once './Member.php';
     $member = new Member();
     $loginResult = $member->loginMember();
 }
