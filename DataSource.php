@@ -103,7 +103,8 @@ class DataSource
      */
     public function insert($query, $paramType, $paramArray)
     {
-      echo "stn".  $stmt = $this->conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
+        print_r($stmt);
        echo $this->bindQueryParams($stmt, $paramType, $paramArray);
 
       echo  $stmt->execute();
