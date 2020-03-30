@@ -30,6 +30,7 @@ class Member
 
     public function registerMember()
     {
+       $response=0;
         $result = $this->isMemberExists($_POST["email"]);
         if ($result < 1) {
             if (! empty($_POST["signup-password"])) {
@@ -42,7 +43,7 @@ class Member
                 $hashedPassword,
                 $_POST["email"]
             );
-            $memberId = $this->ds->insert($query, $paramType, $paramValue);
+          echo  $memberId = $this->ds->insert($query, $paramType, $paramValue);
             if(!empty($memberId)) {
                 $response = array("status" => "success", "message" => "You have registered successfully.");
             }
