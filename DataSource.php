@@ -104,9 +104,9 @@ class DataSource
     public function insert($query, $paramType, $paramArray)
     {
         $stmt = $this->conn->prepare($query);
-        $this->bindQueryParams($stmt, $paramType, $paramArray);
+       echo $this->bindQueryParams($stmt, $paramType, $paramArray);
 
-        $stmt->execute();
+      echo  $stmt->execute();
         $insertId = $stmt->insert_id;
         return $insertId;
     }
