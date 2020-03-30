@@ -67,7 +67,7 @@ class Member
 
     public function loginMember()
     {
-        $loginUserResult = $this->getMember($_POST["email"]);
+        $loginUserResult = $this->getMember($_POST["username"]);
         if (! empty($_POST["signup-password"])) {
             $password = $_POST["signup-password"];
         }
