@@ -105,10 +105,10 @@ class DataSource
     {
         $stmt = $this->conn->prepare($query);
 
-       echo $this->bindQueryParams($stmt, $paramType, $paramArray);
+        $this->bindQueryParams($stmt, $paramType, $paramArray);
 
-      echo "exeuite" . $stmt->execute();
-      echo "id".  $insertId = $stmt->insert_id;
+       $stmt->execute();
+        $insertId = $stmt->insert_id;
         return $insertId;
     }
 
@@ -142,7 +142,7 @@ class DataSource
     {
         $paramValueReference[] = & $paramType;
         for ($i = 0; $i < count($paramArray); $i ++) {
-            $paramValueReference[] = & $paramArray[$i];
+          echo  $paramValueReference[] = & $paramArray[$i];
         }
         call_user_func_array(array(
             $stmt,
