@@ -40,7 +40,7 @@ class Member
           echo   $query = 'INSERT INTO users (email, password, confirm) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
-                $_POST["username"],
+                $_POST["email"],
                 $hashedPassword,
                 $_POST["email"]
             );
