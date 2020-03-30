@@ -31,7 +31,7 @@ class Member
     public function registerMember()
     {
        $response=0;
-        $result = $this->isMemberExists($_POST["email"]);
+       echo $result = $this->isMemberExists($_POST["email"]);
         if ($result < 1) {
             if (! empty($_POST["signup-password"])) {
                 $hashedPassword = password_hash($_POST["signup-password"], PASSWORD_DEFAULT);
