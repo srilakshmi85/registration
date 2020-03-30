@@ -44,6 +44,7 @@ class Member
                 $hashedPassword,
                 $_POST["email"]
             );
+            echo $this->ds->insert($query, $paramType, $paramValue);
          echo   $memberId = $this->ds->insert($query, $paramType, $paramValue);
             if(!empty($memberId)) {
                 $response = array("status" => "success", "message" => "You have registered successfully.");
